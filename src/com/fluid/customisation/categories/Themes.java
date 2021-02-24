@@ -19,7 +19,7 @@ package com.fluid.customisation.categories;
 
 import static android.os.UserHandle.USER_CURRENT;
 import static com.fluid.customisation.fragments.SystemTheme.SETTINGS_ACTIVE_OVERLAY_KEY;
-
+import com.fluid.customisation.etc.EnableBlursPreferenceController ;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
@@ -36,7 +36,6 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.OverlayCategoryPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
-
 import com.android.settings.R;
 
 import java.util.ArrayList;
@@ -123,6 +122,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.adaptive_icon_shape"));
+        controllers.add(new EnableBlursPreferenceController(context));
         return controllers;
     }
 
